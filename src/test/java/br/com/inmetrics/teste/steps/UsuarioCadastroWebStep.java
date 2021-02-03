@@ -52,5 +52,5 @@ public class UsuarioCadastroWebStep {
 		else if(mensagem.equals("Senhas não combinam"))
 			Assert.assertTrue(usuarioCadastroWebPage.validarMensagemSenhasNaoCombinam());
 	}
-			
+
 }

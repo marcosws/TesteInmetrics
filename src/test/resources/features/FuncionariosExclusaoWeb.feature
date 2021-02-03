@@ -10,7 +10,7 @@ Funcionalidade: realizar a exclusão de funcionario na aplicação
 		E clicar no botão entre
 		
 	@positivo
-	Esquema do Cenário: realizar a alteração de funcionario com dados válidos
+	Esquema do Cenário: realizar a exclusão de funcionario com dados válidos
 		E digitar em pesquisar o nome <nomePesquisar>
 		E clicar em excluir
 		Então valido a mensagem <mensagem>

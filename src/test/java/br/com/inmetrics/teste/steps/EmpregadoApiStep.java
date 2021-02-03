@@ -77,5 +77,5 @@ public class EmpregadoApiStep {
 		Assert.assertEquals(202, EmpregadoApi.getResponse().getStatusCode());
 		EmpregadoApi.mostraEmpregado();
 	}
-
+	
 }
