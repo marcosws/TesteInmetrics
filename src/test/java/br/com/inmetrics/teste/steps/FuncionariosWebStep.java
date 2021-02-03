@@ -68,5 +68,26 @@ public class FuncionariosWebStep {
 		Assert.assertEquals("Validação da Mensagem", mensagem, funcionariosWebPage.recuperarMensagemSucesso());
 		
 	}
+	
+	@Quando("digitar em pesquisar o nome {string}")
+	public void digitar_em_pesquisar_o_nome(String nome) {
+		FuncionariosWebPage funcionariosWebPage = new FuncionariosWebPage();
+		funcionariosWebPage.digitarPesquisar(nome);
+	}
+	
+	@Quando("clicar em alterar")
+	public void clicar_em_alterar() {
+		FuncionariosWebPage funcionariosWebPage = new FuncionariosWebPage();
+		funcionariosWebPage.clicarAlterar();
+	}
+	
 
+	@Quando("clicar em excluir")
+	public void clicar_em_excluir() {
+		FuncionariosWebPage funcionariosWebPage = new FuncionariosWebPage();
+		funcionariosWebPage.clicarExcluir();
+	}
+	
+
+	
 }

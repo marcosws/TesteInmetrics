@@ -3,6 +3,7 @@ package br.com.inmetrics.teste.steps;
 import org.junit.Assert;
 
 import br.com.inmetrics.teste.pages.UsuarioCadastroWebPage;
+import br.com.inmetrics.teste.support.Utils;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
@@ -18,6 +19,10 @@ public class UsuarioCadastroWebStep {
 	@Quando("informar um novo usuario {string}")
 	public void informar_um_novo_usuario(String usuario) {
 		UsuarioCadastroWebPage usuarioCadastroWebPage = new UsuarioCadastroWebPage();
+		// REMOVER - gera um codigo aleatorio para evitar cadastro duplicado
+		// apenas para não quebrar o cenário em uma segunda execução
+		usuario = usuario.replaceAll("<n>", Utils.randomNumber(1000)); 
+		// =============================================================
 		usuarioCadastroWebPage.digitarUsuario(usuario);
 	}
 
@@ -47,5 +52,5 @@ public class UsuarioCadastroWebStep {
 		else if(mensagem.equals("Senhas não combinam"))
 			Assert.assertTrue(usuarioCadastroWebPage.validarMensagemSenhasNaoCombinam());
 	}
-
+			
 }

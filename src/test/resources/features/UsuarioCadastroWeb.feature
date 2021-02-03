@@ -17,8 +17,8 @@ Funcionalidade: realizar cadastro de usuario
 		Então valido o retorno a tela de Login
 		
 	Exemplos:
-		| usuario       | senha         | confirmeSenha    |
-		| "igorromanov" | "igorromanov" | "igorromanov"    |
+		| usuario          | senha         | confirmeSenha    |
+		| "ayrtonsenna<n>" | "ayrtonsenna" | "ayrtonsenna"    |
 		
 	@negativo
 	Esquema do Cenário: realizar o cadastro de usuário na aplicação informando dados inválidos

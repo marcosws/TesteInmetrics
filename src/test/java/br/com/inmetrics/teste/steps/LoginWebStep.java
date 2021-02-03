@@ -58,5 +58,4 @@ public class LoginWebStep {
 		Assert.assertEquals("Tela de Login", "Login", loginWebPage.recuperarTitulo());
 	}
 
-
 }

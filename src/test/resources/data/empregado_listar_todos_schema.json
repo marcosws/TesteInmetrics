@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "empregadoId": {
+          "type": "integer"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "sexo": {
+          "type": "string"
+        },
+        "cpf": {
+          "type": "string"
+        },
+        "cargo": {
+          "type": "string"
+        },
+        "admissao": {
+          "type": "string"
+        },
+        "salario": {
+          "type": "string"
+        },
+        "comissao": {
+          "type": "string"
+        },
+        "tipoContratacao": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "empregadoId",
+        "nome",
+        "sexo",
+        "cpf",
+        "cargo",
+        "admissao",
+        "salario",
+        "comissao",
+        "tipoContratacao"
+      ]
+    }
+  ]
+}

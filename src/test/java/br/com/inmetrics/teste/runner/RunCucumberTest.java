@@ -7,12 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"json:target/cucumber.json"},
+		plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"},
 		features = {"src/test/resources/features/"},
 		glue = {"br.com.inmetrics.teste.steps","br.com.inmetrics.teste.support"},
-		tags = "@app"
+		tags = "@global"
 		)
-public class RunCucumberTest {
+public class RunCucumberTest { 
 	
 
 }

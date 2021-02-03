@@ -46,8 +46,12 @@ public class BasePage {
 		webElement.clear();
 		webElement.sendKeys(texto);
 	}
-	
-
+	/**
+	 * @author Marcos
+	 * @param atributo
+	 * @param valor
+	 * @param checked
+	 */
 	protected void selecionar(Atributo atributo, String valor, boolean checked) {
 		WebElement webElement = this.recuperarElemento(atributo, valor);
 		this.highLight(webElement);
@@ -55,14 +59,24 @@ public class BasePage {
 			webElement.click();
 		}
 	}
-	
+	/**
+	 * @author Marcos
+	 * @param atributo
+	 * @param valor
+	 * @param texto
+	 */
 	protected void selecionar(Atributo atributo, String valor, String texto) {
 		WebElement webElement = this.recuperarElemento(atributo, valor);
 		Select select = new Select(webElement);
 		this.highLight(webElement);
 		select.selectByVisibleText(texto);
 	}
-
+	/**
+	 * @author Marcos
+	 * @param atributo
+	 * @param valor
+	 * @return
+	 */
 	protected String recuperarTexto(Atributo atributo, String valor) {
 		WebElement webElement = this.recuperarElemento(atributo, valor);
 		this.highLight(webElement);
@@ -132,6 +146,10 @@ public class BasePage {
 		return null;
 		
 	}
+	/**
+	 * @author Marcos
+	 * @param webElement
+	 */
     private void highLight(WebElement webElement) {
 	    String script = "arguments[0].setAttribute('style', arguments[1]);";
 	    String arguments = "color: white; border: 2px solid rgb(109,254,48); text-shadow: 1px 1px rgb(48,156,1);";
@@ -142,10 +160,21 @@ public class BasePage {
 			Utils.sleep(100);
 	    }
     }
+    /**
+     * @author Marcos
+     * @param script
+     * @param webElement
+     * @param arguments
+     */
 	private void executeJavaScript(String script, WebElement webElement, String arguments) {
 		 JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
 		 javascriptExecutor.executeScript(script, webElement, arguments);
 	}
+	/**
+	 * @author Marcos
+	 * @param script
+	 * @param webElement
+	 */
 	private void executeJavaScript(String script, WebElement webElement) {
 		 JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
 		 javascriptExecutor.executeScript(script, webElement);

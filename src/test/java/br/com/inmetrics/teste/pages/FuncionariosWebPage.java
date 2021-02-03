@@ -15,7 +15,8 @@ public class FuncionariosWebPage extends BasePage {
 		this.editar(Atributo.ID, "inputNome", nome);
 	}
 	public void digitarCpf(String cpf) { 
-		this.editar(Atributo.ID, "cpf", cpf);
+		if(!cpf.equals(""))
+			this.editar(Atributo.ID, "cpf", cpf);
 	}
 	public void selecionarSexo(String sexo)	{
 		this.selecionar(Atributo.ID, "slctSexo", sexo);
@@ -38,12 +39,25 @@ public class FuncionariosWebPage extends BasePage {
 		}
 	}
 	public void clicarEnviar() {
-		this.clicar(Atributo.XPATH, "/html/body/div/div[2]/div/form/div[3]/input");
+		if(this.aguardar(Atributo.XPATH, "/html/body/div/div/div/form/div[3]/input", 3))
+			this.clicar(Atributo.XPATH, "/html/body/div/div/div/form/div[3]/input");
+		if(this.aguardar(Atributo.XPATH, "/html/body/div/div[2]/div/form/div[3]/input", 3))
+			this.clicar(Atributo.XPATH, "/html/body/div/div[2]/div/form/div[3]/input");
 	}
+	
+	public void clicarAlterar() {    
+		this.clicar(Atributo.XPATH, "/html/body/div/div[2]/div/table/tbody/tr[1]/td[6]/a[2]/button");
+	}
+	
+	public void clicarExcluir() {
+		this.clicar(Atributo.XPATH, "/html/body/div/div[2]/div/table/tbody/tr[1]/td[6]/a[1]/button");
+	}
+	
 	
 	public String recuperarMensagemSucesso() {
 		return this.recuperarTexto(Atributo.XPATH, "/html/body/div/div[1]/div").replace("\r", "").replace("\n", "").replace("×", "");
 	}
+
 	
 
 }
