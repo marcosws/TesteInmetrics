@@ -3,6 +3,9 @@
 ## Teste para Avaliação
 <p>Autor: Marcos Willian de Souza</p>
 
+### Jenkins: Evidências de Configurações e Relatórios
+<p>Disponivel no Google Drive: https://drive.google.com/file/d/1oY51gMYGhd8Hv1EF6n56rNwh8N2ddlqi/view?usp=sharing</p>
+
 ### Classe de Execução
 <p>src/test/java/runner -> RunCucumberTest.java : executar os testes</p>
 
